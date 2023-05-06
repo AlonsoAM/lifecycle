@@ -1,6 +1,15 @@
 <p>product works!</p>
-<products-price-component></products-price-component>
+<products-price-component
+  *ngIf="isProductVisible"
+  [price]="currentPrice"
+></products-price-component>
 
-<button class="btn btn-danger" (click)="isProductVisible = !isProductVisible">
+<button
+  class="btn btn-danger me-3"
+  (click)="isProductVisible = !isProductVisible"
+>
   Toggle
+</button>
+<button class="btn btn-warning" (click)="increasePrice()">
+  Aumentar Precio
 </button>
